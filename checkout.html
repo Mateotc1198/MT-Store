@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra | MT STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-beige">
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo" style="margin: 0 auto;">
+                <img src="/assets/logo_placeholder.png" alt="MT STORE" id="site-logo">
+                <span>MT STORE</span>
+            </div>
+            <a href="/" class="back-to-store-btn"><i class="fa-solid fa-arrow-left"></i> Volver a la Tienda</a>
+        </nav>
+    </header>
+
+    <main class="checkout-page container">
+        <div id="checkout-container" class="checkout-grid">
+            <!-- Left Side: Forms -->
+            <div class="checkout-forms">
+                <section class="checkout-section">
+                    <h2><i class="fa-solid fa-truck"></i> Datos de Envío</h2>
+                    <form id="shipping-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="c-name">Nombre Completo</label>
+                                <input type="text" id="c-name" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-address">Dirección</label>
+                            <input type="text" id="c-address" placeholder="Calle 123 #45-67" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="c-city">Ciudad</label>
+                                <input type="text" id="c-city" placeholder="Ej. Medellín" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-zip">Código Postal</label>
+                                <input type="text" id="c-zip" placeholder="Opcional">
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="checkout-section">
+                    <h2><i class="fa-solid fa-building-columns"></i> Pago con PSE</h2>
+                    <p>Serás redirigido a la plataforma segura de PSE para completar tu pago.</p>
+                    <div class="pse-brand">
+                        <img src="https://www.pse.com.co/images/v2/logo-pse.png" alt="PSE" width="80">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="bank-select">Selecciona tu Banco</label>
+                            <select id="bank-select" required>
+                                <option value="">--- Selecciona ---</option>
+                                <option value="bancolombia">Bancolombia</option>
+                                <option value="davivienda">Davivienda</option>
+                                <option value="nequi">Nequi</option>
+                                <option value="daviplata">Daviplata</option>
+                                <option value="bogota">Banco de Bogotá</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <button id="pay-btn" class="checkout-btn-final">PAGAR AHORA</button>
+                <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Seguir Comprando</a>
+            </div>
+
+            <!-- Right Side: Summary -->
+            <div class="order-summary">
+                <h3>Resumen del Pedido</h3>
+                <div id="summary-items" class="summary-items">
+                    <!-- Loaded via JS -->
+                </div>
+                <div class="summary-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span id="sum-subtotal">$0</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Envío</span>
+                        <span style="color: #4CAF50;">Gratis</span>
+                    </div>
+                    <hr>
+                    <div class="total-row grand-total">
+                        <span>TOTAL</span>
+                        <span id="sum-total">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Screen (Hidden by default) -->
+        <div id="success-screen" class="success-screen" style="display: none;">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h1>¡Pago Exitoso!</h1>
+                <p>Gracias por tu compra en MT STORE. Hemos recibido tu pedido y estamos preparando tus tenis.</p>
+                <div class="order-id">Pedido #MT-${Math.floor(Math.random() * 90000) + 10000}</div>
+                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+                    <a href="/" class="auth-btn" style="display:inline-flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-house"></i> VOLVER AL INICIO</a>
+                    <a href="/profile.html" class="auth-btn" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--accent-color); color:#1a1a1a;"><i class="fa-solid fa-receipt"></i> VER MIS PEDIDOS</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/ui/checkout.js"></script>
+</body>
+</html>

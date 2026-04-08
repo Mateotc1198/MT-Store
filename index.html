@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT STORE | Premium Sneakers Boutique</title>
+    <meta name="description"
+        content="Descubre la revolución del confort con MT STORE. Calzado de alta gama diseñado en tonos premium.">
+    <!-- Google Fonts: Inter and Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="nav-links left">
+                <a href="#inicio" class="active">INICIO</a>
+                <a href="#productos">PRODUCTOS</a>
+                <a href="/admin.html" id="admin-link"
+                    style="color: var(--accent-color); font-weight: 700; display: none;">ADMIN</a>
+            </div>
+            <div class="logo">
+                <img src="/assets/logo_placeholder.png" alt="MT STORE" id="site-logo">
+                <span>MT STORE</span>
+            </div>
+            <div class="nav-actions right">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar Productos...">
+                </div>
+                <div class="icon-links">
+                    <a href="#" id="wishlist-btn"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" id="cart-icon-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                    <div class="user-menu-wrapper">
+                        <a href="/login.html" id="user-btn"><i class="fa-regular fa-user"></i></a>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="/profile.html" class="dropdown-item"><i class="fa-solid fa-receipt"></i> Ver mis
+                                Pedidos</a>
+                            <button class="dropdown-item" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>
+                                Cerrar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>TU CARRITO</h3>
+                <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Items will be loaded here -->
+                <p class="empty-msg">Tu carrito está vacío.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total-container">
+                    <span>TOTAL:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+                <button class="checkout-btn">FINALIZAR COMPRA</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero" class="container">
+            <div class="hero-content">
+                <div class="hero-badge"></div>
+                <h1 class="hero-title">THE<br>EXCLUSIVE<br>SNEAKERS</h1>
+                <p class="hero-description">
+                    Calzado 100% original para los amantes de lo exclusivo.
+                </p>
+                <div class="hero-cta">
+                    <a href="#productos" class="btn btn-primary">EXPLORAR AHORA</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="image-wrapper">
+                    <img src="/assets/hero_sneaker.png" alt="Premium Sneaker" id="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="container" style="padding: 80px 0;">
+            <div class="section-title">
+                <h2 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 1rem;">Catálogo Premium
+                </h2>
+                <p>Descubre nuestra selección exclusiva de tenis.</p>
+            </div>
+
+            <!-- Filter Toolbar -->
+            <div class="filters-toolbar">
+                <div class="filter-pills" id="brand-filters">
+                    <button class="pill active" data-brand="all">Todos</button>
+                    <button class="pill" data-brand="nike">Nike</button>
+                    <button class="pill" data-brand="adidas">Adidas</button>
+                    <button class="pill" data-brand="jordan">Jordan</button>
+                    <button class="pill" data-brand="newbalance">New Balance</button>
+                </div>
+                <div class="sort-container">
+                    <label for="sort-price">Ordenar:</label>
+                    <select id="sort-price">
+                        <option value="recent">Más recientes</option>
+                        <option value="desc">Precio: Mayor a Menor</option>
+                        <option value="asc">Precio: Menor a Mayor</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="products-grid" class="products-grid">
+                <div class="loading">Cargando productos...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="/assets/logo_placeholder.png" alt="MT STORE">
+                    <span>MT STORE</span>
+                </div>
+                <p>La mejor boutique de sneakers premium en Colombia. Calzado 100% original con envío gratis a todo el
+                    país.</p>
+            </div>
+            <div class="footer-links">
+                <h4>EXPLORAR</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="/profile.html">Mi Cuenta</a>
+            </div>
+            <div class="footer-social">
+                <h4>SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MT STORE - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

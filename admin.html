@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | MT STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <img src="/assets/logo_placeholder.png" alt="MT STORE" id="site-logo">
+                <span>MT STORE - ADMIN</span>
+            </div>
+            <div class="nav-links">
+                <a href="/">VOLVER A LA TIENDA</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-page container">
+        <div class="admin-form-container" id="admin-main-content" style="display: none;">
+            <!-- Tabs Navigation -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="inventario">INVENTARIO</button>
+                <button class="admin-tab" data-tab="pedidos">GESTIONAR PEDIDOS</button>
+            </div>
+
+            <!-- Inventory Section -->
+            <div id="section-inventario" class="admin-section active">
+                <h2>Añadir Nuevo Tenis</h2>
+                <p>Completa los detalles para publicar un nuevo modelo en la tienda.</p>
+
+                <form id="admin-product-form">
+                    <div class="form-group">
+                        <label for="p-name">Nombre del Modelo</label>
+                        <input type="text" id="p-name" placeholder="Ej. Air Max 2026 Premium" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-marca">Marca</label>
+                        <select id="p-marca" required>
+                            <option value="">Selecciona Marca</option>
+                            <option value="nike">Nike</option>
+                            <option value="adidas">Adidas</option>
+                            <option value="jordan">Jordan</option>
+                            <option value="newbalance">New Balance</option>
+                            <option value="puma">Puma</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-price">Precio (COP)</label>
+                        <input type="number" id="p-price" placeholder="Ej. 200000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-image">Imagen del Tenis</label>
+                        <input type="file" id="p-image" accept="image/*">
+                        <small style="color: #888;">Formatos recomendados: PNG, JPG (fondo blanco).</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-image-url">O pega una URL de imagen</label>
+                        <input type="text" id="p-image-url" placeholder="https://ejemplo.com/imagen.png">
+                        <small style="color: #888;">Usa esto si la subida falla o prefieres usar una URL externa.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-desc">Descripción Corta</label>
+                        <input type="text" id="p-desc" placeholder="Ej. Calzado de alta gama en tonos beige.">
+                    </div>
+
+                    <input type="hidden" id="p-current-image">
+                    <button type="submit" class="auth-btn" id="add-product-btn">PUBLICAR EN LA TIENDA</button>
+                    <button type="button" id="cancel-edit-btn" class="auth-btn" style="display:none; background:#aaa; margin-top:0.5rem;">CANCELAR EDICIÓN</button>
+                </form>
+                <div id="admin-msg" style="margin-top: 20px; text-align: center;"></div>
+
+                <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+
+                <h2>Inventario Actual</h2>
+                <div id="admin-products-list" class="admin-products-list"></div>
+            </div>
+
+            <!-- Orders Section -->
+            <div id="section-pedidos" class="admin-section">
+                <h2>Gestión de Pedidos</h2>
+                <p>Administra los pedidos de los usuarios y actualiza sus estados de envío.</p>
+                <div id="admin-orders-list" style="margin-top: 2rem;">
+                    <!-- Orders will be loaded here via JS -->
+                    <p style="text-align: center; color: #888; padding: 2rem;">Cargando pedidos...</p>
+                </div>
+            </div>
+        </div>
+        <div id="admin-locked" style="text-align: center; padding: 50px;">
+            <i class="fa-solid fa-lock" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+            <h3>Acceso Restringido</h3>
+            <p>Verificando permisos de administrador...</p>
+        </div>
+    </main>
+
+    <script type="module" src="/src/ui/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | MT STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-beige">
+    <header id="main-header">
+        <nav class="container">
+            <div class="nav-links left">
+                <a href="/">INICIO</a>
+                <a href="/#productos">PRODUCTOS</a>
+            </div>
+            <div class="logo">
+                <img src="/assets/logo_placeholder.png" alt="MT STORE" id="site-logo">
+                <span>MT STORE</span>
+            </div>
+            <div class="nav-actions right">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar Productos...">
+                </div>
+                <div class="icon-links">
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="/login.html" class="active"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-card">
+            <h2>Iniciar Sesión</h2>
+            <p>Inicia sesión con tu cuenta de Google o con tu correo electrónico.</p>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ema@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                
+                <p class="auth-helper">¿No tienes una cuenta? <a href="/register.html">Regístrate</a></p>
+                
+                <button type="submit" class="auth-btn" id="login-btn">Iniciar Sesión</button>
+            </form>
+
+            <div class="social-auth">
+                <button class="google-btn" id="google-login">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="20">
+                    Continuar con Google
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/modules/auth.js"></script>
+</body>
+</html>

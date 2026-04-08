@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario | MT STORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .profile-container { padding: 120px 0 60px; }
+        .orders-list { margin-top: 2rem; }
+        .orders-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .order-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .order-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #f0ece8;
+        }
+        .order-id {
+            font-family: var(--font-heading);
+            color: var(--accent-color);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+        .order-meta {
+            color: #999;
+            font-size: 0.8rem;
+        }
+        .order-status {
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #f0fff4;
+            color: #2e7d32;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+        }
+        .order-items-list {
+            padding: 1rem 2rem;
+            background: #fdfcfb;
+        }
+        .order-item-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0ece8;
+            font-size: 0.9rem;
+        }
+        .order-item-row:last-child { border-bottom: none; }
+        .order-item-name { flex: 1; font-weight: 500; }
+        .order-item-qty { color: #999; min-width: 30px; text-align: center; }
+        .order-item-price { font-weight: 700; font-family: var(--font-heading); }
+        .order-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: var(--text-dark);
+            color: white;
+        }
+        .order-card-footer span:first-child {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+        .order-total {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="nav-links left">
+                <a href="/">INICIO</a>
+                <a href="/#productos">PRODUCTOS</a>
+            </div>
+            <div class="logo">
+                <img src="/assets/logo_placeholder.png" alt="MT STORE">
+                <span>MT STORE</span>
+            </div>
+            <div class="nav-actions right">
+                <a href="/" class="btn-link">VOLVER A LA TIENDA</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container profile-container">
+        <div class="section-title" style="text-align: left;">
+            <h1 id="user-welcome">Cargando perfil...</h1>
+            <p id="user-email"></p>
+        </div>
+
+        <div class="orders-section">
+            <h2>Mis Pedidos Recientes</h2>
+            <div id="orders-list" class="orders-list">
+                <!-- Pedidos aparecerán aquí -->
+                <div class="loading">Buscando tus pedidos...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 MT STORE - Mi Perfil Privado</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/ui/profile.js"></script>
+</body>
+</html>
